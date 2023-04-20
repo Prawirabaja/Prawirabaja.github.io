@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+	<style type="text/css">
+		.container {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.navbar {
+			background-color: #333;
+			height: 50px;
+			width: 100%;
+			position: fixed;
+			z-index: 1;
+		}
+
+		.navbar p {
+			color: #aaa;
+			float: left;
+			font-size: 1em;
+			padding-left: 10px;
+			margin-top: 3px;
+		}
+
+		.navbar a {
+			color: #aaa;
+			float: right;
+			font-size: .8em;
+			padding-right: 10px;
+			text-decoration: none;
+			margin-top: 14px;
+		}
+
+		.profile {
+			height: 350px;
+			width: 100%;
+			background-color: #dddbdb;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-top: 10px;
+		}
+
+		.profile img{
+			height: 200px;
+			width: 200px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 50px;
+			border: 3px solid black;
+			border-radius: 90%;
+		}
+
+		.secborder {
+			height: 195px;
+			width: 195px;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 62px;
+			border: 3px solid #dddbdb;
+			border-radius: 90%;
+		}
+
+		p {
+			text-align: center;
+			font-size: 25px;
+			margin-bottom: -5px;
+		}
+
+		.job {
+			font-size: 17px;
+		}
+
+		.about {
+			width: 100%;
+			position: relative;
+			margin-top: 60px;
+			padding-bottom: 40px;
+			padding-top: 40px;
+		}
+
+		hr {
+			width: 95%;
+			border-top: 2px solid gray;
+		}
+
+		.portfolio hr {
+			width: 85%;
+		}
+
+		.main {
+			width: 47%;
+			float: left;
+			padding-left: 35px;
+			box-sizing: border-box;
+		}
+
+		.main a {
+			text-decoration: none;
+		}
+
+		.main p, .sidebar p {
+			text-align: justify;
+			font-size: 20px;
+		}
+
+		.sidebar {
+			width: 48%;
+			float: right;
+			padding-right: 35px;
+			box-sizing: border-box;
+		}
+
+		.portfolio {
+			width: 100%;
+			height: 800px;
+			background-color: #dddbdb;
+			padding-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.gambar img {
+			min-height: 300px;
+			width: 300px;
+			padding-top: 30px;
+			padding-left: 60px;
+			padding-right: 30px;
+		}
+
+		.gambar {
+			height: 700px;
+			width: 90%;
+			/*border: 3px solid black;*/
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			overflow: auto;
+		}
+
+		.skill{
+			padding-top: 6px;
+			width: 100%;
+		}
+
+		.skill img {
+			text-align: center;
+		}
+
+		.skill hr{
+			width: 150px;
+		}
+
+		.slider {
+			/*height: 250px;*/
+			margin: auto;
+			position: relative;
+			width: 70%;
+			display: grid;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+
+		.slider-track {
+			display: flex;
+			width: calc(10px * 33);
+			animation: scroll 60s linear infinite;
+		}
+
+		.slide-track:hover {
+			animation-play-state: paused;
+		}
+
+		@keyframes scroll {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(calc(-160px * 11));
+			}
+		}
+
+		.slide {
+			height: 200px;
+			width: 96px;
+			display: flex;
+			align-items: center;
+			padding: 15px;
+			perspective: 100px;
+		}
+
+		.slide img {
+			/*width: 100%;*/
+			transition: transform 1s;
+		}
+
+		.slide img:hover{
+			transform: translateZ(20px);
+		}
+
+		.slider::before, .slider::after {
+			background: linear-gradient(to right, rgbaa(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+			content: '';
+			height: 100%;
+			position: absolute;
+			width: 15%;
+			z-index: 2;
+		}
+
+		.slider::before{
+			left: 0;
+			top: 0;
+		}
+
+		.slider::after{
+			right: 0;
+			top: 0;
+			transform: rotateZ(180deg);
+		}
+
+
+		footer {
+			width: 100%
+			height: 200px;
+			background-color: #333;
+		}
+
+		footer h5 {
+			color: #aaa;
+			text-decoration: underline;
+			padding-top: 10px;
+			font-size: 20px;
+			text-align: center;
+			margin-bottom: -7px;
+		}
+
+		footer p {
+			font-size: 17px;
+			padding-bottom: 10px;
+			color: #aaa;
+			text-decoration: none;
+		}
+
+		footer a {
+			text-decoration: none;
+			color: #6f75ce;
+		}
+
+		footer a:hover {
+			color: #0816fa;
+			text-decoration: underline;
+		}
+
+
+		/*clearfix*/
+
+		.cf:before,
+		.cf:after {
+		    content: " "; /* 1 */
+		    display: table; /* 2 */
+		}
+
+		.cf:after {
+		    clear: both;
+		}
+		.cf {
+		    *zoom: 1;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<!-- Navbar -->
+	<div class="navbar">
+		<p><a href="#profile">PORTFOLIO : BAJA PRAWIRA BANGUN</a></p>
+		<a href="#contact">Contact</a>
+		<a href="#skill">Skill |</a>
+		<a href="#portfolio">Portfolio | </a>
+		<a href="#about">About | </a>
+	</div>
+	<!-- Akhir Navbar -->
+
+	<!-- Profile -->
+	<div class="profile" id="profile">
+		<img src="fix.png">
+		<p>BAJA PAWIRA BANGUN S.T.</p>
+		<p class="job">Web Developer | UI Designer | Illustrator</p>
+	</div>
+	<div class="secborder"></div>
+	<!-- Akhir Profile -->
+
+	<!-- About -->
+	<div class="about cf" id="about">
+		<p>About</p>
+		<hr>
+		<div class="main">
+			<p>
+				Seorang lulusan S1 Teknik Informatika dari <a href="https://www.uisu.ac.id/" target="_blank">Universitas Islam Sumatera Utara</a> tahun 2018-2022. Lulus dengan IPK 3.66 <i>(Excellent)</i>. Judul Skripsi yang diangkat berkaitan dengan <i>Artificial Intelligence</i> yaitu membahas <i>Machine Learning</i>, dan mendapatkan hasil yang memuaskan. Mulai mendalami Web Development khususnya front-end web development semenjak 2 tahun akhir masa perkuliahan dan terus mendalaminya sampai sekarang. Memiliki pengalaman ikut terlibat dalam pengembangan aplikasi web based sewaktu dimasa perkuliahan. Beberapa contoh project yang pernah dikerjakan berkaitan dengan E-Commerce, website development, web design, brosur design, portfolio, dan Company Profile.
+			</p>
+		</div>
+
+		<div class="sidebar">
+			<p>
+				Memiliki sifat disiplin, teliti dan bertanggungjawab. Hobi berolahraga, menggambar dan membaca. Senang mengikuti perkembangan teknologi dan selalu memperbarui pengetahuan yang berkaitan dengan web development. Dapat bekerja secara mandiri maupun dalam tim serta terbiasa bekerja dengan deadline. Memiliki imajinasi yang tinggi, terbukti sangat relevan dan membantu dalam pengembangan visualisasi UI. Untuk Bahasa pemrograman yang dikuasai yaitu HTML, CSS, Javascript, PHP dan beberapa frameworknya. sedangkan untuk tools lain yang digunakan untuk membantu dalam pengembangan design berupa Photoshop dan figma.
+			</p>
+		</div>
+		
+		
+	</div>
+	<!-- Akhir About -->
+
+	<!-- Portfolio -->
+	<div class="portfolio" id="portfolio">
+		<p>Portfolio</p>
+		<hr>
+		<div class="gambar">
+			<img src="d.png">
+			<img src="f.png">
+			<img src="a.png">
+			<img src="b.png">
+			<img src="e.png">
+			<img src="c.png">
+		</div>
+	</div>
+	<!-- Akhir Portfolio -->
+
+	<!-- skill -->
+	<div class="skill" id="skill">
+		<p>Skill</p>
+		<hr>
+
+		<div class="slider">
+			<div class="slider-track">
+				<div class="slide">
+					<img src="html.png">
+				</div>
+				<div class="slide">
+					<img src="css.png">
+				</div>
+				<div class="slide">
+					<img src="php.png">
+				</div>
+				<div class="slide">
+					<img src="js.png">
+				</div>
+				<div class="slide">
+					<img src="laravel.png">
+				</div>
+				<div class="slide">
+					<img src="react.png">
+				</div>
+				<div class="slide">
+					<img src="figma.png">
+				</div>
+				<div class="slide">
+					<img src="poto.png">
+				</div>
+				<div class="slide">
+					<img src="git.png">
+				</div>
+				<div class="slide">
+					<img src="github.png">
+				</div>
+				<div class="slide">
+					<img src="gitlab.png">
+				</div>
+
+
+
+				<div class="slide">
+					<img src="html.png">
+				</div>
+				<div class="slide">
+					<img src="css.png">
+				</div>
+				<div class="slide">
+					<img src="php.png">
+				</div>
+				<div class="slide">
+					<img src="js.png">
+				</div>
+				<div class="slide">
+					<img src="laravel.png">
+				</div>
+				<div class="slide">
+					<img src="react.png">
+				</div>
+				<div class="slide">
+					<img src="figma.png">
+				</div>
+				<div class="slide">
+					<img src="poto.png">
+				</div>
+				<div class="slide">
+					<img src="git.png">
+				</div>
+				<div class="slide">
+					<img src="github.png">
+				</div>
+				<div class="slide">
+					<img src="gitlab.png">
+				</div>
+
+
+				<div class="slide">
+					<img src="html.png">
+				</div>
+				<div class="slide">
+					<img src="css.png">
+				</div>
+				<div class="slide">
+					<img src="php.png">
+				</div>
+				<div class="slide">
+					<img src="js.png">
+				</div>
+				<div class="slide">
+					<img src="laravel.png">
+				</div>
+				<div class="slide">
+					<img src="react.png">
+				</div>
+				<div class="slide">
+					<img src="figma.png">
+				</div>
+				<div class="slide">
+					<img src="poto.png">
+				</div>
+				<div class="slide">
+					<img src="git.png">
+				</div>
+				<div class="slide">
+					<img src="github.png">
+				</div>
+				<div class="slide">
+					<img src="gitlab.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Akhir Skill -->
+
+	<!-- Footer -->
+	<footer id="contact">
+		<h5>Contact</h5>
+		<p><img src="telp.png"> 082273172692 | <a href="https://accounts.google.com/v3/signin/identifier?dsh=S386163764%3A1681838254606358&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AQMjQ7RLZix_Q3yjRYzg6iePeSONsPx1e3AuXOsmeWoFN2ZdMRaqflFEegYDl6oXbQGjgsvRsHZUbQ&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank"><img src="mail.png"> bajaprawirab@gmail.com</a> |  <a href="https://www.linkedin.com/in/baja-prawira-bangun-40aa63262" target="_blank"><img src="link.png"> LinkedIn Profile</a> | <a href="https://www.cakeresume.com/me/baja-prawira-bangun/portfolios" target="_blank"><img src="folio.png"> Portfolio</a></p>
+		<p>&COPY;copyright | Build By <a href="">Baja Prawira Bangun</a></p>
+	</footer>
+	<!-- Akhir Footer -->
+
+</div>
+
+</body>
+</html>
