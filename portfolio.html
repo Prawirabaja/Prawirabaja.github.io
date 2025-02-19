@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.container {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.navbar {
+			background-color: #333;
+			height: 50px;
+			width: 100%;
+			position: fixed;
+			z-index: 1;
+		}
+
+		.navbar p {
+			color: #aaa;
+			float: left;
+			font-size: 1em;
+			padding-left: 10px;
+			margin-top: 3px;
+		}
+
+		.navbar a {
+			color: #aaa;
+			float: right;
+			font-size: .8em;
+			padding-right: 10px;
+			text-decoration: none;
+			margin-top: 14px;
+		}
+
+		.profile {
+			height: 350px;
+			width: 100%;
+			/*background-color: #dddbdb;*/
+			background-image: url(frame.png);
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-top: 10px;
+		}
+
+		.profile img{
+			height: 200px;
+			width: 200px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 50px;
+			border: 3px solid black;
+			border-radius: 90%;
+		}
+
+		.secborder {
+			height: 195px;
+			width: 195px;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 62px;
+			border: 3px solid #dddbdb;
+			border-radius: 90%;
+		}
+
+		p {
+			text-align: center;
+			font-size: 25px;
+			margin-bottom: -5px;
+		}
+
+		.job {
+			font-size: 17px;
+		}
+
+		.content {
+			margin-top: 70px;
+			padding-left: 10px;
+		}
+
+		h2 {
+			width: 100px;
+			padding-left: 3%;
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+
+		.vid {
+			/*background-color: red;*/
+			width: 100%;
+		}
+
+		video {
+			margin-bottom: 20px;
+			margin-left: 20px;
+			border: 1px ridge gray;
+		}
+
+		img {
+			margin-left: 20px;
+			margin-bottom: 20px;
+			margin-right: 40px;
+			width: 155px;
+			box-shadow: 0 0 4px gray;
+		}
+
+		.overlay {
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: rgba(0,0,0,0);
+			transition: .7s;
+			text-align: center;
+			padding: 100px 0;
+		}
+
+		.overlay:target {
+			width: auto;
+			height: auto;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,.8)
+
+		}
+
+		.design .overlay img {
+			width: auto;
+			height: 400px;
+			max-width: 100%;
+		} 
+
+		.coding .overlay img {
+			width: 80%;
+			max-height: 100%;
+		}
+
+		.overlay .close {
+			position: absolute;
+			top: 50px;
+			left: 80%;
+			margin-left: -20px;
+			color: white;
+			text-decoration: none;
+			border: 1px solid white;
+			border-radius: 20%;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+
+	<!-- Navbar -->
+	<div class="navbar">
+		<p><a href="index.html">PORTFOLIO : BAJA PRAWIRA BANGUN</a></p>
+		<a href="index.html">Contact</a>
+		<a href="#index.html">Skill |</a>
+		<a href="#index.html">Portfolio | </a>
+		<a href="#index.html">About | </a>
+	</div>
+	<!-- Akhir Navbar -->
+
+	<div class="content">
+		<div class="design">
+			<h2>Design</h2>
+			<div class="dsg">
+				<a href="#ovr1">
+					<img src="img1.png">
+				</a>	
+				<a href="#ovr2">
+					<img src="img2.png">
+				</a>
+				<a href="#ovr3">
+					<img src="img4.png">
+				</a>
+				<a href="#ovr4">
+					<img src="img8.png">
+				</a>
+				<a href="#ovr5">
+					<img src="img10.png">
+				</a>
+				<a href="#ovr6">
+					<img src="img7.png">
+				</a>
+				<a href="#ovr7">
+					<img src="img12.png">
+				</a>
+				<a href="#ovr8">
+					<img src="img11.png">
+				</a>
+				<a href="#ovr9">
+					<img src="img6.png">
+				</a>
+				<a href="#ovr10">
+					<img src="img3.png">
+				</a>
+				<a href="#ovr11">
+					<img src="img5.png">
+				</a>
+				<a href="#ovr12">
+					<img src="img9.png">
+				</a>
+				
+			</div>
+			<div class="overlay" id="ovr1">
+				<a href="#" class="close"> X </a>
+				<img src="img1.png">
+			</div>
+			<div class="overlay" id="ovr2">
+				<a href="#" class="close"> X </a>
+				<img src="img2.png">
+			</div>
+			<div class="overlay" id="ovr3">
+				<a href="#" class="close"> X </a>
+				<img src="img4.png">
+			</div>
+			<div class="overlay" id="ovr4">
+				<a href="#" class="close"> X </a>
+				<img src="img8.png">
+			</div>
+			<div class="overlay" id="ovr5">
+				<a href="#" class="close"> X </a>
+				<img src="img10.png">
+			</div>
+			<div class="overlay" id="ovr6">
+				<a href="#" class="close"> X </a>
+				<img src="img7.png">
+			</div>
+			<div class="overlay" id="ovr7">
+				<a href="#" class="close"> X </a>
+				<img src="img12.png">
+			</div>
+			<div class="overlay" id="ovr8">
+				<a href="#" class="close"> X </a>
+				<img src="img11.png">
+			</div>
+			<div class="overlay" id="ovr9">
+				<a href="#" class="close"> X </a>
+				<img src="img6.png">
+			</div>
+			<div class="overlay" id="ovr10">
+				<a href="#" class="close"> X </a>
+				<img src="img3.png">
+			</div>
+			<div class="overlay" id="ovr11">
+				<a href="#" class="close"> X </a>
+				<img src="img5.png">
+			</div>
+			<div class="overlay" id="ovr12">
+				<a href="#" class="close"> X </a>
+				<img src="img9.png">
+			</div>
+		</div>
+
+		<div class="coding">
+			<h2>Coding</h2>
+			<div class="cod">
+				<a href="#ovrl1">
+					<img src="a.png">
+				</a>
+				<a href="#ovrl2">
+					<img src="b.png">
+				</a>
+				<a href="#ovrl3">
+					<img src="c.png">
+				</a>
+				<a href="#ovrl4">
+					<img src="d.png">
+				</a>
+				<a href="#ovrl5">
+					<img src="e.png">
+				</a>
+				<a href="#ovrl6">
+					<img src="f.png">
+				</a>
+			</div>
+
+			<div class="overlay" id="ovrl1">
+				<a href="#" class="close"> X </a>
+				<img src="a.png">
+			</div>
+			<div class="overlay" id="ovrl2">
+				<a href="#" class="close"> X </a>
+				<img src="b.png">
+			</div>
+			<div class="overlay" id="ovrl3">
+				<a href="#" class="close"> X </a>
+				<img src="c.png">
+			</div>
+			<div class="overlay" id="ovrl4">
+				<a href="#" class="close"> X </a>
+				<img src="d.png">
+			</div>
+			<div class="overlay" id="ovrl5">
+				<a href="#" class="close"> X </a>
+				<img src="e.png">
+			</div>
+			<div class="overlay" id="ovrl6">
+				<a href="#" class="close"> X </a>
+				<img src="f.png">
+			</div>
+		</div>
+
+		<div class="video">
+			<h2>Video</h2>
+			<div class="vid">
+				<video controls="true" width="400px">
+					<source src="vid1.mp4" type="video/webm">
+				</video>
+				<br>
+				<video controls="true" width="400px" height="200px">
+					<source src="vid2.mp4" type="video/webm">
+				</video>
+				<br>
+				<video controls="true" width="400px" height="200px">
+					<source src="vid3.mp4" type="video/webm">
+				</video>
+			</div>
+		</div>
+
+		<div class="motion">
+			<h2>Motion</h2>
+			<div class="mot">
+				<video controls="true" width="400px" height="200px">
+					<source src="mot1.mp4" type="video/webm">
+				</video>
+				<br>
+				<video controls="true" width="400px" height="200px">
+					<source src="mot2.mp4" type="video/webm">
+				</video>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
